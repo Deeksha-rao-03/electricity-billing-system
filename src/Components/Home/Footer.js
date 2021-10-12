@@ -1,6 +1,6 @@
 import React from "react";
 import './FooterStyles.css';
-import logo from '/module 3/ReactJS/ebs/src/assests/logo1.jpg';
+
 /*
 function Footer() {
   return (

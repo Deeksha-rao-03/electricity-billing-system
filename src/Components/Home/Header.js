@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 import logo from '/module 3/ReactJS/electricity-billing-system/src/assests/logo3.jpg';
 import coro1 from '/module 3/ReactJS/electricity-billing-system/src/assests/Coro-img1.jpg';
 import coro2 from '/module 3/ReactJS/electricity-billing-system/src/assests/Coro-img2.jpg';
@@ -27,14 +28,14 @@ function Header() {
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">ADMIN</a>
-                            <a class="dropdown-item" href="#">CUSTOMER</a>
+                            <a class="dropdown-item" href="/LoginCustomer">CUSTOMER</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
+                    <Link to={"/ContactUs"} class="nav-link" >CONTACT US</Link>
                     </li>
                 </ul>
             </nav>
