@@ -1,32 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Alert } from 'react-alert';
 import { Redirect } from 'react-router';
-import logo from '/module 3/ReactJS/electricity-billing-system/src/assests/logo3.jpg';
-import icon from '/module 3/ReactJS/electricity-billing-system/src/assests/icon.png';
-import './DeleteCustomer.css'
+import { useForm } from "react-hook-form";
+import logo from '../assests/logo3.jpg';
+import './Customer.css';
 
 function RegisterCustomer() {
 
-    // const initialState = {
-    //     productName: '',
-    //     price: 0,
-    //     desc: '',
-    //     dateOfCreation: ''
-    //   };
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const [submitted, setSubmitted] = useState(false);
-
-    // const handleChange = (event) => {        
-    //     setProduct((product) => ({
-    //         ...product,
-    //         [event.target.name]: event.target.value,
-    //     }));
-    // };
-
+   
     const handleSubmit = (event) => {
 
         let payload = {
@@ -40,7 +28,7 @@ function RegisterCustomer() {
 
         axios.post("http://localhost:8080/customer/register", payload).then(resp => setSubmitted(true));
 
-        console.log("Customer Registered :" + payload.name);
+        alert("Customer Registered :" + payload.name);
         event.preventDefault();
     }
     return (
@@ -56,11 +44,9 @@ function RegisterCustomer() {
                         <ul class="navbar-nav">
                             <span class="sr-only">(current)</span>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">HOME</a>
+                                <a class="nav-link" href="/">HOME</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../RegisterCustomer">REGISTER</a>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                     LOGIN
@@ -83,21 +69,21 @@ function RegisterCustomer() {
             <div className="container-fluid">
                 {
                     submitted && <Redirect to="/LoginCustomer" />}
-                <div class="sidebar">
-                   
-                    <p>Be With This App</p>
-                    <p>That Gives your Stress</p>
-                    <p>    Wings And Let It Fly</p>
-                    <p>    Away…</p>
+                <div class="container-loginsection" style={{color:"cadetblue", textAlign:"center"}}>
+                   <p></p>
+                    <h6 style={{marginTop:"50%"}}>Be With This App</h6>
+                    <h6>That Gives your Stress</h6>
+                    <h6>    Wings And Let It Fly</h6>
+                    <h6>    Away…</h6>
 
-                    <p>    Contactless payments</p>
+                    <h6>    Contactless payments</h6>
 
-                    <p>    Bills on One touch</p>
+                    <h6>Bills on One touch</h6>    
 
                     
                 </div>
                 <div class="container-register">
-                    <h2>REGISTER</h2>
+                    <h4>REGISTER</h4>
                     <div className="form-group">
                         <label htmlFor="name">Customer Name</label>
                         <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Enter customer name" id="name" />
@@ -122,9 +108,8 @@ function RegisterCustomer() {
                     <h6>Already have an account? <a href="../LoginCustomer">Sign In</a></h6>
                 </div>
             </div>
-
             <footer>
-                <div>
+
                     <section class="footer">
                         <div class="social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -155,8 +140,7 @@ function RegisterCustomer() {
                             Electricity Billing System @ 2021
                         </p>
                     </section>
-                </div>
-            </footer>
+                </footer>
         </div>
 
     )

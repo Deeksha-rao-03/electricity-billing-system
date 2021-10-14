@@ -1,7 +1,7 @@
 import React from "react";
-import logo from '/module 3/ReactJS/electricity-billing-system/src/assests/logo3.jpg';
+import logo from '../assests/logo3.jpg';
+import '../Customer/Customer.css';
 
-import './AboutUsStyles.css'
 function AboutUs() {
     return (
         <div>

@@ -1,0 +1,57 @@
+#customerId {
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #middle{
+    text-align: center;
+    text-decoration: dotted;
+    border-width: 100%;
+    padding: 15px;
+     margin-left: auto;
+    margin-right: auto; 
+    width: 70%;
+    border-collapse: collapse;
+  }
+
+  #tariffId{
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #connectionId{
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #createdDate{
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #status{
+    width: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+@media screen and (max-width: 400px) {
+    .container {
+      text-align: center;
+      float: none;
+    }
+  }

@@ -1,0 +1,204 @@
+* { 
+  box-sizing: border-box;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #212121;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color:white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color:cadetblue;
+  
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.container-update{
+  float: right;
+  margin-top: 8px;
+  width: 1250px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.about-section{
+
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #212121;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+h1{
+  color: aliceblue;
+}
+.container-aboutus{
+  float: right;
+  
+  width: 1300px;
+  height: 580px;
+  padding: 12px;
+  background-color: cadetblue;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.container-account{
+  float: right;
+  margin-top: 10px;
+  width: 1250px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-gap:5px;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+} 
+.container-account .card{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0;
+  background:#fff;
+  transition: 0.5s;
+  padding: 0%;
+} 
+.container-account .card:hover{
+  box-shadow: 0 30px 50px rgba(0,0,0,.2);
+}
+.container-account .card .face{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-account .card .face.face1{
+  box-sizing: border-box;
+  padding:20px;
+  text-align: center;
+  background:#fff;
+  color:cadetblue;
+  align-items:flex-end;
+}
+.container-account .card .face.face1 h2{
+  margin-top:60px;
+}
+.container-account .card .face.face1 a{
+  display: inline-block;
+  padding:5px 10px;
+  margin-top:20px;
+  text-decoration: none;
+  color:cadetblue;
+  border:2px solid cadetblue;
+  transition:0.5s
+}
+.container-account .card .face.face1 a:hover{
+  color:#fff;
+  background: cadetblue;
+}
+.container-account .card .face.face2{
+  background-color: cadetblue;
+  transition:0.5s;
+}
+.container-account .card:hover .face.face2{
+  height:80px;
+  width:80px;
+  border-radius: 50%;
+  top:40px;
+  left:50%;
+  transform: translateX(-50%);
+  background:transparent;
+}
+.container-account .card .face.face2 h2{
+  margin:0;
+  padding:0;
+  font-size: 10px;
+  color:#fff;
+  transition:0.5s;
+}
+.container-account .card:hover .face.face2 h2{
+  color:cadetblue;
+  font-size: 10px;
+}
+.container-delete{
+  float: right;
+  margin-top: 10px;
+  width: 1250px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.container-register{
+  float: right;
+  margin-top: 10px;
+  width: 1250px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.container-loginsection{
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #212121;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+
+h3{
+  color: aliceblue;
+}
+h4{
+  color: black;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+ 
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}

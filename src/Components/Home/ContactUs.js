@@ -3,7 +3,7 @@ import { Redirect } from 'react-router';
 import './HeaderStyles.css';
 import './FooterStyles.css';
 import './ContactUs.css';
-import logo from '/Module3/reactjs/electricity-billing-system/src/assests/logo3.jpg';
+import logo from '../assests/logo3.jpg';
 import { Link } from 'react-router-dom';
 class ContactUs extends React.Component {
 
@@ -65,8 +65,8 @@ class ContactUs extends React.Component {
             </nav>
           </div>
         </header>
-        <div class="ContactUs" data-aos="fade-in">
-          <div class="container">
+        <div class="ContactUs" data-aos="fade-in" >
+          <div class="container"style={{paddingTop:"0", marginTop:"0px"}}>
             <h2>Contact Us</h2>
           </div>
         </div>
@@ -99,7 +99,7 @@ class ContactUs extends React.Component {
 
               </div>
 
-              <div class="col-lg-8 mt-5 mt-lg-0">
+              <div class="col-lg-8 mt-5 mt-lg-0"  style={{paddingBottom:"10%"}}>
 
 
 

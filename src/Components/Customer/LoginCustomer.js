@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
-import logo from '/module 3/ReactJS/electricity-billing-system/src/assests/logo3.jpg';
-import './DeleteCustomer.css'
+import { Alert } from 'react-alert';
+import logo from '../assests/logo3.jpg';
+import './Customer.css';
+import Footer from '../Footer/Footer';
 
 class LoginCustomer extends React.Component {
     constructor() {
@@ -24,7 +26,7 @@ class LoginCustomer extends React.Component {
     handleSubmit = (event) => {
         let loginPayload =
         {
-           name: this.state.name,
+            name: this.state.name,
             password: this.state.password
         }
 
@@ -63,109 +65,103 @@ class LoginCustomer extends React.Component {
     }
     render() {
         return (
-
             <div>
-                <header>
-                    <div>
-                        <nav class="navbar collapseOnSelect navbar-expand-lg bg-dark navbar-dark sticky-top">
-                            <a class="navbar-brand" href="#">
-                                <img src={logo} alt="logo" style={{ width: "43px", borderRadius: "50%" }} />
-                            </a>
-                            <h3 style={{ color: "white" }}>EBS </h3>
-                            <ul class="navbar-nav">
-                                <span class="sr-only">(current)</span>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../RegisterCustomer">REGISTER</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                        LOGIN
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">ADMIN</a>
-                                        <a class="dropdown-item" href="../LoginCustomer">CUSTOMER</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../AboutUs">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">CONTACT US</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-                <div className="container-fluid">
-                    {
-                        this.state.isValidUser === false && <h3>Invalid username or password</h3>
-                        }
-                    <div class="about-section">
-                        <h1>Welcome </h1>
-                        <p>Sign in to</p>
-                        <p>Continue access....
-                        </p>
-
-
-
-                    </div>
-                    <div class="container-register">
-                        <h2>LOGIN HERE</h2>
-                        <div className="form-group">
-                            <label htmlFor="name">Username</label>
-                            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control" placeholder="Enter username" id="name" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} className="form-control" placeholder="Enter password" id="productPrice" />
-                        </div>
+                <section>
+                    <header>
                         <div>
-                            <button onClick={this.handleSubmit} className="btn btn-primary">Login</button>
-                            
-                        </div><p></p>
-                        <h6>New User? <a href="../RegisterCustomer">Sign Up</a></h6>
-                    </div>
-                </div>
+                            <nav class="navbar collapseOnSelect navbar-expand-lg bg-dark navbar-dark sticky-top">
+                                <a class="navbar-brand" href="#">
+                                    <img src={logo} alt="logo" style={{ width: "43px", borderRadius: "50%" }} />
+                                </a>
+                                <h3 style={{ color: "white" }}>EBS </h3>
+                                <ul class="navbar-nav">
+                                    <span class="sr-only">(current)</span>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/">HOME</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../RegisterCustomer">REGISTER</a>
+                                    </li>
 
-                <footer>
-                    <div>
-                        <section class="footer">
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-youtube"></i></a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../AboutUs">ABOUT US</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/ContactUs">CONTACT US</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+                </section>
+                <section>
+                    <div className="container-fluid" >
+                        {
+                            this.state.isValidUser === false && alert("Invalid Username And Password")
+                        }
+                        <div class="container-loginsection" style={{color:"cadetblue", textAlign:"center"}}>
+                            <h2 style={{marginTop:"50%"}}>Welcome </h2><p></p>
+
+                            <h4 style={{color:"cadetblue"}}>Sign in to</h4>
+                            <h4 style={{color:"cadetblue"}}>Continue access....
+                            </h4>
+
+
+
+                        </div>
+                        <div class="container-register">
+                            <h2>LOGIN HERE</h2>
+                            <div className="form-group">
+                                <label htmlFor="name">Username</label>
+                                <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control" placeholder="Enter username" id="name" />
                             </div>
+                            <div className="form-group">
+                                <label htmlFor="password">Password</label>
+                                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} className="form-control" placeholder="Enter password" id="productPrice" />
+                            </div>
+                            <div>
+                                <button onClick={this.handleSubmit} className="btn btn-primary">Login</button>
 
-                            <ul className="list">
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">Help</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                            </ul>
-                            <p className="copyright">
-                                Electricity Billing System @ 2021
-                            </p>
-                        </section>
+                            </div><p></p>
+                            <h6>New User? <a href="../RegisterCustomer">Sign Up</a></h6>
+                        </div>
                     </div>
+                </section>
+                <footer>
+
+                    <section class="footer">
+                        <div class="social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </div>
+
+                        <ul className="list">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                        <p className="copyright">
+                            Electricity Billing System @ 2021
+                        </p>
+                    </section>
+
                 </footer>
             </div>
-
         )
     }
 
